@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Logo from './logo.svg';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//jsx的语法
+const isLogin = false;
+const htm = '<h1>asdasdas</h1>'
+ReactDOM.render(
+    <div className="box">
+      <img src= { Logo } alt="aa"/>
+      {
+          !isLogin ? <button>登录按钮</button> : ''
+      }
+      <div dangerouslySetInnerHTML = {{ __html: htm }}></div>
+      <div>{htm}</div>
+    </div>,
+  
+  document.getElementById('root')
+)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
